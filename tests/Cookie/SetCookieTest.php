@@ -1,12 +1,12 @@
 <?php
 
-namespace GuzzleHttp\Tests\CookieJar;
+namespace WP2StaticGuzzleHttp\Tests\CookieJar;
 
-use GuzzleHttp\Cookie\SetCookie;
+use WP2StaticGuzzleHttp\Cookie\SetCookie;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \GuzzleHttp\Cookie\SetCookie
+ * @covers \WP2StaticGuzzleHttp\Cookie\SetCookie
  */
 class SetCookieTest extends TestCase
 {

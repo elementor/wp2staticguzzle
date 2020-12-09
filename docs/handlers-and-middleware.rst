@@ -8,7 +8,7 @@ Handlers
 ========
 
 A handler function accepts a ``Psr\Http\Message\RequestInterface`` and array of
-request options and returns a ``GuzzleHttp\Promise\PromiseInterface`` that is
+request options and returns a ``WP2StaticGuzzleHttp\Promise\PromiseInterface`` that is
 fulfilled with a ``Psr\Http\Message\ResponseInterface`` or rejected with an
 exception.
 
@@ -17,13 +17,13 @@ a client constructor. It is important to understand that several request
 options used by Guzzle require that specific middlewares wrap the handler used
 by the client. You can ensure that the handler you provide to a client uses the
 default middlewares by wrapping the handler in the
-``GuzzleHttp\HandlerStack::create(callable $handler = null)`` static method.
+``WP2StaticGuzzleHttp\HandlerStack::create(callable $handler = null)`` static method.
 
 .. code-block:: php
 
-    use GuzzleHttp\Client;
-    use GuzzleHttp\HandlerStack;
-    use GuzzleHttp\Handler\CurlHandler;
+    use WP2StaticGuzzleHttp\Client;
+    use WP2StaticGuzzleHttp\HandlerStack;
+    use WP2StaticGuzzleHttp\Handler\CurlHandler;
 
     $handler = new CurlHandler();
     $stack = HandlerStack::create($handler); // Wrap w/ middleware
@@ -52,7 +52,7 @@ The ``create`` method adds default handlers to the ``HandlerStack``. When the
   4. ``http_errors`` - throws exceptions when the response status code ``>=``
      400.
 
-When provided no ``$handler`` argument, ``GuzzleHttp\HandlerStack::create()``
+When provided no ``$handler`` argument, ``WP2StaticGuzzleHttp\HandlerStack::create()``
 will choose the most appropriate handler based on the extensions available on
 your system.
 
@@ -115,9 +115,9 @@ wrapping the handler used by the client or by decorating a handler stack.
 
 .. code-block:: php
 
-    use GuzzleHttp\HandlerStack;
-    use GuzzleHttp\Handler\CurlHandler;
-    use GuzzleHttp\Client;
+    use WP2StaticGuzzleHttp\HandlerStack;
+    use WP2StaticGuzzleHttp\Handler\CurlHandler;
+    use WP2StaticGuzzleHttp\Client;
 
     $stack = new HandlerStack();
     $stack->setHandler(new CurlHandler());
@@ -134,9 +134,9 @@ downstream handler. This example adds a header to the response.
 
     use Psr\Http\Message\RequestInterface;
     use Psr\Http\Message\ResponseInterface;
-    use GuzzleHttp\HandlerStack;
-    use GuzzleHttp\Handler\CurlHandler;
-    use GuzzleHttp\Client;
+    use WP2StaticGuzzleHttp\HandlerStack;
+    use WP2StaticGuzzleHttp\Handler\CurlHandler;
+    use WP2StaticGuzzleHttp\Client;
 
     function add_response_header($header, $value)
     {
@@ -161,16 +161,16 @@ downstream handler. This example adds a header to the response.
     $client = new Client(['handler' => $stack]);
 
 Creating a middleware that modifies a request is made much simpler using the
-``GuzzleHttp\Middleware::mapRequest()`` middleware. This middleware accepts
+``WP2StaticGuzzleHttp\Middleware::mapRequest()`` middleware. This middleware accepts
 a function that takes the request argument and returns the request to send.
 
 .. code-block:: php
 
     use Psr\Http\Message\RequestInterface;
-    use GuzzleHttp\HandlerStack;
-    use GuzzleHttp\Handler\CurlHandler;
-    use GuzzleHttp\Client;
-    use GuzzleHttp\Middleware;
+    use WP2StaticGuzzleHttp\HandlerStack;
+    use WP2StaticGuzzleHttp\Handler\CurlHandler;
+    use WP2StaticGuzzleHttp\Client;
+    use WP2StaticGuzzleHttp\Middleware;
 
     $stack = new HandlerStack();
     $stack->setHandler(new CurlHandler());
@@ -182,15 +182,15 @@ a function that takes the request argument and returns the request to send.
     $client = new Client(['handler' => $stack]);
 
 Modifying a response is also much simpler using the
-``GuzzleHttp\Middleware::mapResponse()`` middleware.
+``WP2StaticGuzzleHttp\Middleware::mapResponse()`` middleware.
 
 .. code-block:: php
 
     use Psr\Http\Message\ResponseInterface;
-    use GuzzleHttp\HandlerStack;
-    use GuzzleHttp\Handler\CurlHandler;
-    use GuzzleHttp\Client;
-    use GuzzleHttp\Middleware;
+    use WP2StaticGuzzleHttp\HandlerStack;
+    use WP2StaticGuzzleHttp\Handler\CurlHandler;
+    use WP2StaticGuzzleHttp\Client;
+    use WP2StaticGuzzleHttp\Middleware;
 
     $stack = new HandlerStack();
     $stack->setHandler(new CurlHandler());
@@ -214,10 +214,10 @@ stack.
 
 .. code-block:: php
 
-    use GuzzleHttp\Client;
-    use GuzzleHttp\HandlerStack;
-    use GuzzleHttp\Middleware;
-    use GuzzleHttp\Utils;
+    use WP2StaticGuzzleHttp\Client;
+    use WP2StaticGuzzleHttp\HandlerStack;
+    use WP2StaticGuzzleHttp\Middleware;
+    use WP2StaticGuzzleHttp\Utils;
     use Psr\Http\Message\RequestInterface;
 
     $stack = new HandlerStack();
@@ -257,7 +257,7 @@ by name.
 .. code-block:: php
 
     use Psr\Http\Message\RequestInterface;
-    use GuzzleHttp\Middleware;
+    use WP2StaticGuzzleHttp\Middleware;
 
     // Add a middleware with a name
     $stack->push(Middleware::mapRequest(function (RequestInterface $r) {
@@ -283,7 +283,7 @@ Creating a Handler
 
 As stated earlier, a handler is a function accepts a
 ``Psr\Http\Message\RequestInterface`` and array of request options and returns
-a ``GuzzleHttp\Promise\PromiseInterface`` that is fulfilled with a
+a ``WP2StaticGuzzleHttp\Promise\PromiseInterface`` that is fulfilled with a
 ``Psr\Http\Message\ResponseInterface`` or rejected with an exception.
 
 A handler is responsible for applying the following :doc:`request-options`.

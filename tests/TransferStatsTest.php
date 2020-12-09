@@ -1,9 +1,9 @@
 <?php
 
-namespace GuzzleHttp\Tests;
+namespace WP2StaticGuzzleHttp\Tests;
 
-use GuzzleHttp\Psr7;
-use GuzzleHttp\TransferStats;
+use WP2StaticGuzzleHttp\Psr7;
+use WP2StaticGuzzleHttp\TransferStats;
 use PHPUnit\Framework\TestCase;
 
 class TransferStatsTest extends TestCase

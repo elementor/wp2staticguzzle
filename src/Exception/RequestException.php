@@ -1,9 +1,9 @@
 <?php
 
-namespace GuzzleHttp\Exception;
+namespace WP2StaticGuzzleHttp\Exception;
 
-use GuzzleHttp\BodySummarizer;
-use GuzzleHttp\BodySummarizerInterface;
+use WP2StaticGuzzleHttp\BodySummarizer;
+use WP2StaticGuzzleHttp\BodySummarizerInterface;
 use Psr\Http\Client\RequestExceptionInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;

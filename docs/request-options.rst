@@ -11,7 +11,7 @@ All of the following examples use the following client:
 
 .. code-block:: php
 
-    $client = new GuzzleHttp\Client(['base_uri' => 'http://httpbin.org']);
+    $client = new WP2StaticGuzzleHttp\Client(['base_uri' => 'http://httpbin.org']);
 
 
 .. _allow_redirects-option:
@@ -35,7 +35,7 @@ allow_redirects
             'track_redirects' => false
         ]
 
-:Constant: ``GuzzleHttp\RequestOptions::ALLOW_REDIRECTS``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::ALLOW_REDIRECTS``
 
 Set to ``false`` to disable redirects.
 
@@ -116,9 +116,9 @@ pairs:
 .. warning::
 
     This option only has an effect if your handler has the
-    ``GuzzleHttp\Middleware::redirect`` middleware. This middleware is added
+    ``WP2StaticGuzzleHttp\Middleware::redirect`` middleware. This middleware is added
     by default when a client is created with no handler, and is added by
-    default when creating a handler with ``GuzzleHttp\HandlerStack::create``.
+    default when creating a handler with ``WP2StaticGuzzleHttp\HandlerStack::create``.
 
 
 auth
@@ -133,7 +133,7 @@ auth
         - string
         - null
 :Default: None
-:Constant: ``GuzzleHttp\RequestOptions::AUTH``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::AUTH``
 
 The built-in authentication types are as follows:
 
@@ -187,7 +187,7 @@ body
     - ``fopen()`` resource
     - ``Psr\Http\Message\StreamInterface``
 :Default: None
-:Constant: ``GuzzleHttp\RequestOptions::BODY``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::BODY``
 
 This setting can be set to any of the following types:
 
@@ -211,7 +211,7 @@ This setting can be set to any of the following types:
   .. code-block:: php
 
       // You can send requests that use a Guzzle stream object as the body
-      $stream = GuzzleHttp\Psr7\Utils::streamFor('contents...');
+      $stream = WP2StaticGuzzleHttp\Psr7\Utils::streamFor('contents...');
       $client->request('POST', '/post', ['body' => $stream]);
 
 .. note::
@@ -233,7 +233,7 @@ cert
         - string
         - array
 :Default: None
-:Constant: ``GuzzleHttp\RequestOptions::CERT``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::CERT``
 
 .. code-block:: php
 
@@ -247,24 +247,24 @@ cookies
 
 :Summary: Specifies whether or not cookies are used in a request or what cookie
         jar to use or what cookies to send.
-:Types: ``GuzzleHttp\Cookie\CookieJarInterface``
+:Types: ``WP2StaticGuzzleHttp\Cookie\CookieJarInterface``
 :Default: None
-:Constant: ``GuzzleHttp\RequestOptions::COOKIES``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::COOKIES``
 
 You must specify the cookies option as a
-``GuzzleHttp\Cookie\CookieJarInterface`` or ``false``.
+``WP2StaticGuzzleHttp\Cookie\CookieJarInterface`` or ``false``.
 
 .. code-block:: php
 
-    $jar = new \GuzzleHttp\Cookie\CookieJar();
+    $jar = new \WP2StaticGuzzleHttp\Cookie\CookieJar();
     $client->request('GET', '/get', ['cookies' => $jar]);
 
 .. warning::
 
     This option only has an effect if your handler has the
-    ``GuzzleHttp\Middleware::cookies`` middleware. This middleware is added
+    ``WP2StaticGuzzleHttp\Middleware::cookies`` middleware. This middleware is added
     by default when a client is created with no handler, and is added by
-    default when creating a handler with ``GuzzleHttp\default_handler``.
+    default when creating a handler with ``WP2StaticGuzzleHttp\default_handler``.
 
 .. tip::
 
@@ -281,7 +281,7 @@ connect_timeout
         to a server. Use ``0`` to wait indefinitely (the default behavior).
 :Types: float
 :Default: ``0``
-:Constant: ``GuzzleHttp\RequestOptions::CONNECT_TIMEOUT``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::CONNECT_TIMEOUT``
 
 .. code-block:: php
 
@@ -310,7 +310,7 @@ debug
         - bool
         - ``fopen()`` resource
 :Default: None
-:Constant: ``GuzzleHttp\RequestOptions::DEBUG``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::DEBUG``
 
 .. code-block:: php
 
@@ -348,7 +348,7 @@ decode_content
         - string
         - bool
 :Default: ``true``
-:Constant: ``GuzzleHttp\RequestOptions::DECODE_CONTENT``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::DECODE_CONTENT``
 
 This option can be used to control how content-encoded response bodies are
 handled. By default, ``decode_content`` is set to true, meaning any gzipped
@@ -385,7 +385,7 @@ delay
     - integer
     - float
 :Default: null
-:Constant: ``GuzzleHttp\RequestOptions::DELAY``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::DELAY``
 
 
 .. _expect-option:
@@ -398,7 +398,7 @@ expect
     - bool
     - integer
 :Default: ``1048576``
-:Constant: ``GuzzleHttp\RequestOptions::EXPECT``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::EXPECT``
 
 Set to ``true`` to enable the "Expect: 100-Continue" header for all requests
 that sends a body. Set to ``false`` to disable the "Expect: 100-Continue"
@@ -424,7 +424,7 @@ force_ip_resolve
 :Summary: Set to "v4" if you want the HTTP handlers to use only ipv4 protocol or "v6" for ipv6 protocol.
 :Types: string
 :Default: null
-:Constant: ``GuzzleHttp\RequestOptions::FORCE_IP_RESOLVE``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::FORCE_IP_RESOLVE``
 
 .. code-block:: php
 
@@ -446,7 +446,7 @@ form_params
 
 :Summary: Used to send an `application/x-www-form-urlencoded` POST request.
 :Types: array
-:Constant: ``GuzzleHttp\RequestOptions::FORM_PARAMS``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::FORM_PARAMS``
 
 Associative array of form field names to values where each value is a string or
 array of strings. Sets the Content-Type header to
@@ -479,7 +479,7 @@ headers
     representing the header field values.
 :Types: array
 :Defaults: None
-:Constant: ``GuzzleHttp\RequestOptions::HEADERS``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::HEADERS``
 
 .. code-block:: php
 
@@ -500,7 +500,7 @@ created by the client (e.g., ``request()`` and ``requestAsync()``).
 
 .. code-block:: php
 
-    $client = new GuzzleHttp\Client(['headers' => ['X-Foo' => 'Bar']]);
+    $client = new WP2StaticGuzzleHttp\Client(['headers' => ['X-Foo' => 'Bar']]);
 
     // Will send a request with the X-Foo header.
     $client->request('GET', '/get');
@@ -513,13 +513,13 @@ created by the client (e.g., ``request()`` and ``requestAsync()``).
     $client->request('GET', '/get', ['headers' => null]);
 
     // Will not overwrite the X-Foo header because it is in the message.
-    use GuzzleHttp\Psr7\Request;
+    use WP2StaticGuzzleHttp\Psr7\Request;
     $request = new Request('GET', 'http://foo.com', ['X-Foo' => 'test']);
     $client->send($request);
 
     // Will overwrite the X-Foo header with the request option provided in the
     // send method.
-    use GuzzleHttp\Psr7\Request;
+    use WP2StaticGuzzleHttp\Psr7\Request;
     $request = new Request('GET', 'http://foo.com', ['X-Foo' => 'test']);
     $client->send($request, ['headers' => ['X-Foo' => 'overwrite']]);
 
@@ -534,12 +534,12 @@ http_errors
     HTTP protocol errors are encountered.
 :Types: bool
 :Default: ``true``
-:Constant: ``GuzzleHttp\RequestOptions::HTTP_ERRORS``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::HTTP_ERRORS``
 
 .. code-block:: php
 
     $client->request('GET', '/status/500');
-    // Throws a GuzzleHttp\Exception\ServerException
+    // Throws a WP2StaticGuzzleHttp\Exception\ServerException
 
     $res = $client->request('GET', '/status/500', ['http_errors' => false]);
     echo $res->getStatusCode();
@@ -548,9 +548,9 @@ http_errors
 .. warning::
 
     This option only has an effect if your handler has the
-    ``GuzzleHttp\Middleware::httpErrors`` middleware. This middleware is added
+    ``WP2StaticGuzzleHttp\Middleware::httpErrors`` middleware. This middleware is added
     by default when a client is created with no handler, and is added by
-    default when creating a handler with ``GuzzleHttp\default_handler``.
+    default when creating a handler with ``WP2StaticGuzzleHttp\default_handler``.
 
 
 idn_conversion
@@ -562,7 +562,7 @@ idn_conversion
     - bool
     - int
 :Default: ``true`` if ``intl`` extension is available (and ICU library is 4.6+ for PHP 7.2+), ``false`` otherwise
-:Constant: ``GuzzleHttp\RequestOptions::IDN_CONVERSION``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::IDN_CONVERSION``
 
 .. code-block:: php
 
@@ -587,7 +587,7 @@ json
 :Types:
     Any PHP type that can be operated on by PHP's ``json_encode()`` function.
 :Default: None
-:Constant: ``GuzzleHttp\RequestOptions::JSON``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::JSON``
 
 .. code-block:: php
 
@@ -598,7 +598,7 @@ over the wire.
 
 .. code-block:: php
 
-    use GuzzleHttp\Middleware;
+    use WP2StaticGuzzleHttp\Middleware;
 
     // Create a middleware that echoes parts of the request.
     $tapMiddleware = Middleware::tap(function ($request) {
@@ -632,7 +632,7 @@ multipart
 
 :Summary: Sets the body of the request to a `multipart/form-data` form.
 :Types: array
-:Constant: ``GuzzleHttp\RequestOptions::MULTIPART``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::MULTIPART``
 
 The value of ``multipart`` is an array of associative arrays, each containing
 the following key value pairs:
@@ -682,11 +682,11 @@ on_headers
 :Summary: A callable that is invoked when the HTTP headers of the response have
     been received but the body has not yet begun to download.
 :Types: - callable
-:Constant: ``GuzzleHttp\RequestOptions::ON_HEADERS``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::ON_HEADERS``
 
 The callable accepts a ``Psr\Http\Message\ResponseInterface`` object. If an exception
 is thrown by the callable, then the promise associated with the response will
-be rejected with a ``GuzzleHttp\Exception\RequestException`` that wraps the
+be rejected with a ``WP2StaticGuzzleHttp\Exception\RequestException`` that wraps the
 exception that was thrown.
 
 You may need to know what headers and status codes were received before data
@@ -722,15 +722,15 @@ on_stats
     error encountered. Included in the data is the total amount of time taken
     to send the request.
 :Types: - callable
-:Constant: ``GuzzleHttp\RequestOptions::ON_STATS``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::ON_STATS``
 
-The callable accepts a ``GuzzleHttp\TransferStats`` object.
+The callable accepts a ``WP2StaticGuzzleHttp\TransferStats`` object.
 
 .. code-block:: php
 
-    use GuzzleHttp\TransferStats;
+    use WP2StaticGuzzleHttp\TransferStats;
 
-    $client = new GuzzleHttp\Client();
+    $client = new WP2StaticGuzzleHttp\Client();
 
     $client->request('GET', 'http://httpbin.org/stream/1024', [
         'on_stats' => function (TransferStats $stats) {
@@ -758,7 +758,7 @@ progress
 :Summary: Defines a function to invoke when transfer progress is made.
 :Types: - callable
 :Default: None
-:Constant: ``GuzzleHttp\RequestOptions::PROGRESS``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::PROGRESS``
 
 The function accepts the following positional arguments:
 
@@ -797,7 +797,7 @@ proxy
     - string
     - array
 :Default: None
-:Constant: ``GuzzleHttp\RequestOptions::PROXY``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::PROXY``
 
 Pass a string to specify a proxy for all protocols.
 
@@ -842,7 +842,7 @@ query
     - array
     - string
 :Default: None
-:Constant: ``GuzzleHttp\RequestOptions::QUERY``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::QUERY``
 
 .. code-block:: php
 
@@ -863,7 +863,7 @@ read_timeout
 :Summary: Float describing the timeout to use when reading a streamed body
 :Types: float
 :Default: Defaults to the value of the ``default_socket_timeout`` PHP ini setting
-:Constant: ``GuzzleHttp\RequestOptions::READ_TIMEOUT``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::READ_TIMEOUT``
 
 The timeout applies to individual read operations on a streamed body (when the ``stream`` option is enabled).
 
@@ -894,7 +894,7 @@ sink
     - ``Psr\Http\Message\StreamInterface``
 
 :Default: PHP temp stream
-:Constant: ``GuzzleHttp\RequestOptions::SINK``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::SINK``
 
 Pass a string to specify the path to a file that will store the contents of the
 response body:
@@ -916,7 +916,7 @@ body to an open PSR-7 stream.
 .. code-block:: php
 
     $resource = fopen('/path/to/file', 'w');
-    $stream = GuzzleHttp\Psr7\Utils::streamFor($resource);
+    $stream = WP2StaticGuzzleHttp\Psr7\Utils::streamFor($resource);
     $client->request('GET', '/stream/20', ['save_to' => $stream]);
 
 .. note::
@@ -939,7 +939,7 @@ ssl_key
         - string
         - array
 :Default: None
-:Constant: ``GuzzleHttp\RequestOptions::SSL_KEY``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::SSL_KEY``
 
 .. note::
 
@@ -957,7 +957,7 @@ stream
     up-front.
 :Types: bool
 :Default: ``false``
-:Constant: ``GuzzleHttp\RequestOptions::STREAM``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::STREAM``
 
 .. code-block:: php
 
@@ -983,7 +983,7 @@ synchronous
     response. This can be useful for optimizations.
 :Types: bool
 :Default: none
-:Constant: ``GuzzleHttp\RequestOptions::SYNCHRONOUS``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::SYNCHRONOUS``
 
 
 .. _verify-option:
@@ -1002,7 +1002,7 @@ verify
     - bool
     - string
 :Default: ``true``
-:Constant: ``GuzzleHttp\RequestOptions::VERIFY``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::VERIFY``
 
 .. code-block:: php
 
@@ -1034,13 +1034,13 @@ timeout
         to wait indefinitely (the default behavior).
 :Types: float
 :Default: ``0``
-:Constant: ``GuzzleHttp\RequestOptions::TIMEOUT``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::TIMEOUT``
 
 .. code-block:: php
 
     // Timeout if a server does not return a response in 3.14 seconds.
     $client->request('GET', '/delay/5', ['timeout' => 3.14]);
-    // PHP Fatal error:  Uncaught exception 'GuzzleHttp\Exception\TransferException'
+    // PHP Fatal error:  Uncaught exception 'WP2StaticGuzzleHttp\Exception\TransferException'
 
 
 .. _version-option:
@@ -1051,7 +1051,7 @@ version
 :Summary: Protocol version to use with the request.
 :Types: string, float
 :Default: ``1.1``
-:Constant: ``GuzzleHttp\RequestOptions::VERSION``
+:Constant: ``WP2StaticGuzzleHttp\RequestOptions::VERSION``
 
 .. code-block:: php
 

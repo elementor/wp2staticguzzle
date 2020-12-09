@@ -1,15 +1,15 @@
 <?php
 
-namespace GuzzleHttp\Tests;
+namespace WP2StaticGuzzleHttp\Tests;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Pool;
-use GuzzleHttp\Promise\Promise;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
+use WP2StaticGuzzleHttp\Client;
+use WP2StaticGuzzleHttp\Exception\ClientException;
+use WP2StaticGuzzleHttp\Handler\MockHandler;
+use WP2StaticGuzzleHttp\HandlerStack;
+use WP2StaticGuzzleHttp\Pool;
+use WP2StaticGuzzleHttp\Promise\Promise;
+use WP2StaticGuzzleHttp\Psr7\Request;
+use WP2StaticGuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
 

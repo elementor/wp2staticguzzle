@@ -1,8 +1,8 @@
 <?php
 
-namespace GuzzleHttp\Cookie;
+namespace WP2StaticGuzzleHttp\Cookie;
 
-use GuzzleHttp\Utils;
+use WP2StaticGuzzleHttp\Utils;
 
 /**
  * Persists non-session cookies using a JSON formatted file

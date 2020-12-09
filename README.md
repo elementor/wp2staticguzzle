@@ -22,7 +22,7 @@ trivial to integrate with web services.
 - Middleware system allows you to augment and compose client behavior.
 
 ```php
-$client = new \GuzzleHttp\Client();
+$client = new \WP2StaticGuzzleHttp\Client();
 $response = $client->request('GET', 'https://api.github.com/repos/guzzle/guzzle');
 
 echo $response->getStatusCode(); // 200
@@ -30,7 +30,7 @@ echo $response->getHeaderLine('content-type'); // 'application/json; charset=utf
 echo $response->getBody(); // '{"id": 1420053, "name": "guzzle", ...}'
 
 // Send an asynchronous request.
-$request = new \GuzzleHttp\Psr7\Request('GET', 'http://httpbin.org');
+$request = new \WP2StaticGuzzleHttp\Psr7\Request('GET', 'http://httpbin.org');
 $promise = $client->sendAsync($request)->then(function ($response) {
     echo 'I completed! ' . $response->getBody();
 });
@@ -63,10 +63,10 @@ composer require guzzlehttp/guzzle
 | Version | Status     | Packagist           | Namespace    | Repo                | Docs                | PSR-7 | PHP Version |
 |---------|------------|---------------------|--------------|---------------------|---------------------|-------|-------------|
 | 3.x     | EOL        | `guzzle/guzzle`     | `Guzzle`     | [v3][guzzle-3-repo] | [v3][guzzle-3-docs] | No    | >= 5.3.3    |
-| 4.x     | EOL        | `guzzlehttp/guzzle` | `GuzzleHttp` | [v4][guzzle-4-repo] | N/A                 | No    | >= 5.4      |
-| 5.x     | EOL        | `guzzlehttp/guzzle` | `GuzzleHttp` | [v5][guzzle-5-repo] | [v5][guzzle-5-docs] | No    | >= 5.4      |
-| 6.x     | Security fixes | `guzzlehttp/guzzle` | `GuzzleHttp` | [v6][guzzle-6-repo] | [v6][guzzle-6-docs] | Yes   | >= 5.5      |
-| 7.x     | Latest     | `guzzlehttp/guzzle` | `GuzzleHttp` | [v7][guzzle-7-repo] | [v7][guzzle-7-docs] | Yes   | >= 7.2      |
+| 4.x     | EOL        | `guzzlehttp/guzzle` | `WP2StaticGuzzleHttp` | [v4][guzzle-4-repo] | N/A                 | No    | >= 5.4      |
+| 5.x     | EOL        | `guzzlehttp/guzzle` | `WP2StaticGuzzleHttp` | [v5][guzzle-5-repo] | [v5][guzzle-5-docs] | No    | >= 5.4      |
+| 6.x     | Security fixes | `guzzlehttp/guzzle` | `WP2StaticGuzzleHttp` | [v6][guzzle-6-repo] | [v6][guzzle-6-docs] | Yes   | >= 5.5      |
+| 7.x     | Latest     | `guzzlehttp/guzzle` | `WP2StaticGuzzleHttp` | [v7][guzzle-7-repo] | [v7][guzzle-7-docs] | Yes   | >= 7.2      |
 
 [guzzle-3-repo]: https://github.com/guzzle/guzzle3
 [guzzle-4-repo]: https://github.com/guzzle/guzzle/tree/4.x

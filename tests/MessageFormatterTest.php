@@ -1,16 +1,16 @@
 <?php
 
-namespace GuzzleHttp\Tests;
+namespace WP2StaticGuzzleHttp\Tests;
 
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\MessageFormatter;
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
+use WP2StaticGuzzleHttp\Exception\RequestException;
+use WP2StaticGuzzleHttp\MessageFormatter;
+use WP2StaticGuzzleHttp\Psr7;
+use WP2StaticGuzzleHttp\Psr7\Request;
+use WP2StaticGuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \GuzzleHttp\MessageFormatter
+ * @covers \WP2StaticGuzzleHttp\MessageFormatter
  */
 class MessageFormatterTest extends TestCase
 {

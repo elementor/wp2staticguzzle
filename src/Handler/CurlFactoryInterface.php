@@ -1,6 +1,6 @@
 <?php
 
-namespace GuzzleHttp\Handler;
+namespace WP2StaticGuzzleHttp\Handler;
 
 use Psr\Http\Message\RequestInterface;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace GuzzleHttp\Test;
+namespace WP2StaticGuzzleHttp\Test;
 
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Utils;
+use WP2StaticGuzzleHttp\Psr7;
+use WP2StaticGuzzleHttp\Utils;
 use PHPUnit\Framework\TestCase;
 
 class InternalUtilsTest extends TestCase

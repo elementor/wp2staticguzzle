@@ -23,12 +23,12 @@ a response or exception by shifting return values off of a queue.
 
 .. code-block:: php
 
-    use GuzzleHttp\Client;
-    use GuzzleHttp\Handler\MockHandler;
-    use GuzzleHttp\HandlerStack;
-    use GuzzleHttp\Psr7\Response;
-    use GuzzleHttp\Psr7\Request;
-    use GuzzleHttp\Exception\RequestException;
+    use WP2StaticGuzzleHttp\Client;
+    use WP2StaticGuzzleHttp\Handler\MockHandler;
+    use WP2StaticGuzzleHttp\HandlerStack;
+    use WP2StaticGuzzleHttp\Psr7\Response;
+    use WP2StaticGuzzleHttp\Psr7\Request;
+    use WP2StaticGuzzleHttp\Exception\RequestException;
 
     // Create a mock and queue two responses.
     $mock = new MockHandler([
@@ -73,9 +73,9 @@ history of the requests that were sent by a client.
 
 .. code-block:: php
 
-    use GuzzleHttp\Client;
-    use GuzzleHttp\HandlerStack;
-    use GuzzleHttp\Middleware;
+    use WP2StaticGuzzleHttp\Client;
+    use WP2StaticGuzzleHttp\HandlerStack;
+    use WP2StaticGuzzleHttp\Middleware;
 
     $container = [];
     $history = Middleware::history($container);
@@ -132,7 +132,7 @@ Using the test server
 
     The following functionality is provided to help developers of Guzzle
     develop HTTP handlers. There is no promise of backwards compatibility
-    when it comes to the node.js test server or the ``GuzzleHttp\Tests\Server``
+    when it comes to the node.js test server or the ``WP2StaticGuzzleHttp\Tests\Server``
     class. If you are using the test server or ``Server`` class outside of
     guzzlehttp/guzzle, then you will need to configure autoloading and
     ensure the web server is started manually.
@@ -152,16 +152,16 @@ Any operation on the ``Server`` object will ensure that
 the server is running and wait until it is able to receive requests before
 returning.
 
-``GuzzleHttp\Tests\Server`` provides a static interface to the test server. You
+``WP2StaticGuzzleHttp\Tests\Server`` provides a static interface to the test server. You
 can queue an HTTP response or an array of responses by calling
 ``Server::enqueue()``. This method accepts an array of
 ``Psr\Http\Message\ResponseInterface`` and ``Exception`` objects.
 
 .. code-block:: php
 
-    use GuzzleHttp\Client;
-    use GuzzleHttp\Psr7\Response;
-    use GuzzleHttp\Tests\Server;
+    use WP2StaticGuzzleHttp\Client;
+    use WP2StaticGuzzleHttp\Psr7\Response;
+    use WP2StaticGuzzleHttp\Tests\Server;
 
     // Start the server and queue a response
     Server::enqueue([

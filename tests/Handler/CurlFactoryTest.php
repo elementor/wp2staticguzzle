@@ -1,22 +1,22 @@
 <?php
 
-namespace GuzzleHttp\Test\Handler;
+namespace WP2StaticGuzzleHttp\Test\Handler;
 
-use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Handler;
-use GuzzleHttp\Handler\CurlFactory;
-use GuzzleHttp\Handler\EasyHandle;
-use GuzzleHttp\Promise as P;
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Tests\Helpers;
-use GuzzleHttp\Tests\Server;
-use GuzzleHttp\TransferStats;
+use WP2StaticGuzzleHttp\Exception\ConnectException;
+use WP2StaticGuzzleHttp\Exception\RequestException;
+use WP2StaticGuzzleHttp\Handler;
+use WP2StaticGuzzleHttp\Handler\CurlFactory;
+use WP2StaticGuzzleHttp\Handler\EasyHandle;
+use WP2StaticGuzzleHttp\Promise as P;
+use WP2StaticGuzzleHttp\Psr7;
+use WP2StaticGuzzleHttp\Tests\Helpers;
+use WP2StaticGuzzleHttp\Tests\Server;
+use WP2StaticGuzzleHttp\TransferStats;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * @covers \GuzzleHttp\Handler\CurlFactory
+ * @covers \WP2StaticGuzzleHttp\Handler\CurlFactory
  */
 class CurlFactoryTest extends TestCase
 {
@@ -641,7 +641,7 @@ class CurlFactoryTest extends TestCase
         $handler = new Handler\CurlHandler();
         $promise = $handler($req, []);
 
-        $this->expectException(\GuzzleHttp\Exception\RequestException::class);
+        $this->expectException(\WP2StaticGuzzleHttp\Exception\RequestException::class);
         $this->expectExceptionMessage('An error was encountered while creating the response');
         $promise->wait();
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace GuzzleHttp\Cookie;
+namespace WP2StaticGuzzleHttp\Cookie;
 
 /**
  * Persists cookies in the client session

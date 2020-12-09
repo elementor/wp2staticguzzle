@@ -1,15 +1,15 @@
 <?php
 
-namespace GuzzleHttp\Test\Handler;
+namespace WP2StaticGuzzleHttp\Test\Handler;
 
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Handler\Proxy;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\RequestOptions;
+use WP2StaticGuzzleHttp\Handler\MockHandler;
+use WP2StaticGuzzleHttp\Handler\Proxy;
+use WP2StaticGuzzleHttp\Psr7\Request;
+use WP2StaticGuzzleHttp\RequestOptions;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \GuzzleHttp\Handler\Proxy
+ * @covers \WP2StaticGuzzleHttp\Handler\Proxy
  */
 class ProxyTest extends TestCase
 {

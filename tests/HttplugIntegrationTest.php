@@ -1,8 +1,8 @@
 <?php
 
-namespace GuzzleHttp\Tests;
+namespace WP2StaticGuzzleHttp\Tests;
 
-use GuzzleHttp\Client;
+use WP2StaticGuzzleHttp\Client;
 use Http\Client\Tests\HttpClientTest;
 use Psr\Http\Client\ClientInterface;
 

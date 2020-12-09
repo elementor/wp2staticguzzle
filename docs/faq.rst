@@ -26,7 +26,7 @@ Can Guzzle send asynchronous requests?
 Yes. You can use the ``requestAsync``, ``sendAsync``, ``getAsync``,
 ``headAsync``, ``putAsync``, ``postAsync``, ``deleteAsync``, and ``patchAsync``
 methods of a client to send an asynchronous request. The client will return a
-``GuzzleHttp\Promise\PromiseInterface`` object. You can chain ``then``
+``WP2StaticGuzzleHttp\Promise\PromiseInterface`` object. You can chain ``then``
 functions off of the promise.
 
 .. code-block:: php
@@ -71,9 +71,9 @@ additional options can be specified as an associative array in the
 
 .. code-block:: php
 
-    use GuzzleHttp\Client;
-    use GuzzleHttp\HandlerStack;
-    use GuzzleHttp\Handler\CurlMultiHandler;
+    use WP2StaticGuzzleHttp\Client;
+    use WP2StaticGuzzleHttp\HandlerStack;
+    use WP2StaticGuzzleHttp\Handler\CurlMultiHandler;
 
     $client = new Client(['handler' => HandlerStack::create(new CurlMultiHandler([
         'options' => [
@@ -139,13 +139,13 @@ setting the ``expect`` request option to ``false``:
 
 .. code-block:: php
 
-    $client = new GuzzleHttp\Client();
+    $client = new WP2StaticGuzzleHttp\Client();
 
     // Disable the expect header on a single request
     $response = $client->request('PUT', '/', ['expect' => false]);
 
     // Disable the expect header on all client requests
-    $client = new GuzzleHttp\Client(['expect' => false]);
+    $client = new WP2StaticGuzzleHttp\Client(['expect' => false]);
 
 How can I track redirected requests?
 ====================================

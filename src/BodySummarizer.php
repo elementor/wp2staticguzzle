@@ -1,6 +1,6 @@
 <?php
 
-namespace GuzzleHttp;
+namespace WP2StaticGuzzleHttp;
 
 use Psr\Http\Message\MessageInterface;
 
@@ -22,7 +22,7 @@ final class BodySummarizer implements BodySummarizerInterface
     public function summarize(MessageInterface $message): ?string
     {
         return $this->truncateAt === null
-            ? \GuzzleHttp\Psr7\Message::bodySummary($message)
-            : \GuzzleHttp\Psr7\Message::bodySummary($message, $this->truncateAt);
+            ? \WP2StaticGuzzleHttp\Psr7\Message::bodySummary($message)
+            : \WP2StaticGuzzleHttp\Psr7\Message::bodySummary($message, $this->truncateAt);
     }
 }

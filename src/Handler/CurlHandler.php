@@ -1,8 +1,8 @@
 <?php
 
-namespace GuzzleHttp\Handler;
+namespace WP2StaticGuzzleHttp\Handler;
 
-use GuzzleHttp\Promise\PromiseInterface;
+use WP2StaticGuzzleHttp\Promise\PromiseInterface;
 use Psr\Http\Message\RequestInterface;
 
 /**

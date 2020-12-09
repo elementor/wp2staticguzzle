@@ -1,12 +1,12 @@
 <?php
 
-namespace GuzzleHttp\Tests;
+namespace WP2StaticGuzzleHttp\Tests;
 
-use GuzzleHttp\Cookie\CookieJar;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
+use WP2StaticGuzzleHttp\Cookie\CookieJar;
+use WP2StaticGuzzleHttp\Handler\MockHandler;
+use WP2StaticGuzzleHttp\HandlerStack;
+use WP2StaticGuzzleHttp\Psr7\Request;
+use WP2StaticGuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 
 class HandlerStackTest extends TestCase
@@ -99,13 +99,13 @@ class HandlerStackTest extends TestCase
         $builder->push(__CLASS__ . '::' . 'foo');
         $lines = \explode("\n", (string) $builder);
         self::assertStringContainsString("> 4) Name: 'a', Function: callable(", $lines[0]);
-        self::assertStringContainsString("> 3) Name: '', Function: callable(GuzzleHttp\\Tests\\HandlerStackTest::foo)", $lines[1]);
-        self::assertStringContainsString("> 2) Name: '', Function: callable(['GuzzleHttp\\Tests\\HandlerStackTest', 'bar'])", $lines[2]);
-        self::assertStringContainsString("> 1) Name: '', Function: callable(GuzzleHttp\\Tests\\HandlerStackTest::foo)", $lines[3]);
+        self::assertStringContainsString("> 3) Name: '', Function: callable(WP2StaticGuzzleHttp\\Tests\\HandlerStackTest::foo)", $lines[1]);
+        self::assertStringContainsString("> 2) Name: '', Function: callable(['WP2StaticGuzzleHttp\\Tests\\HandlerStackTest', 'bar'])", $lines[2]);
+        self::assertStringContainsString("> 1) Name: '', Function: callable(WP2StaticGuzzleHttp\\Tests\\HandlerStackTest::foo)", $lines[3]);
         self::assertStringContainsString("< 0) Handler: callable(", $lines[4]);
-        self::assertStringContainsString("< 1) Name: '', Function: callable(GuzzleHttp\\Tests\\HandlerStackTest::foo)", $lines[5]);
-        self::assertStringContainsString("< 2) Name: '', Function: callable(['GuzzleHttp\\Tests\\HandlerStackTest', 'bar'])", $lines[6]);
-        self::assertStringContainsString("< 3) Name: '', Function: callable(GuzzleHttp\\Tests\\HandlerStackTest::foo)", $lines[7]);
+        self::assertStringContainsString("< 1) Name: '', Function: callable(WP2StaticGuzzleHttp\\Tests\\HandlerStackTest::foo)", $lines[5]);
+        self::assertStringContainsString("< 2) Name: '', Function: callable(['WP2StaticGuzzleHttp\\Tests\\HandlerStackTest', 'bar'])", $lines[6]);
+        self::assertStringContainsString("< 3) Name: '', Function: callable(WP2StaticGuzzleHttp\\Tests\\HandlerStackTest::foo)", $lines[7]);
         self::assertStringContainsString("< 4) Name: 'a', Function: callable(", $lines[8]);
     }
 

@@ -1,21 +1,21 @@
 <?php
 
-namespace GuzzleHttp\Tests;
+namespace WP2StaticGuzzleHttp\Tests;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\BadResponseException;
-use GuzzleHttp\Exception\TooManyRedirectsException;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Middleware;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\RedirectMiddleware;
+use WP2StaticGuzzleHttp\Client;
+use WP2StaticGuzzleHttp\Exception\BadResponseException;
+use WP2StaticGuzzleHttp\Exception\TooManyRedirectsException;
+use WP2StaticGuzzleHttp\Handler\MockHandler;
+use WP2StaticGuzzleHttp\HandlerStack;
+use WP2StaticGuzzleHttp\Middleware;
+use WP2StaticGuzzleHttp\Psr7\Request;
+use WP2StaticGuzzleHttp\Psr7\Response;
+use WP2StaticGuzzleHttp\RedirectMiddleware;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
 
 /**
- * @covers \GuzzleHttp\RedirectMiddleware
+ * @covers \WP2StaticGuzzleHttp\RedirectMiddleware
  */
 class RedirectMiddlewareTest extends TestCase
 {
@@ -113,7 +113,7 @@ class RedirectMiddlewareTest extends TestCase
         try {
             $promise->wait();
             self::fail();
-        } catch (\GuzzleHttp\Exception\TooManyRedirectsException $e) {
+        } catch (\WP2StaticGuzzleHttp\Exception\TooManyRedirectsException $e) {
             self::assertSame(302, $e->getResponse()->getStatusCode());
         }
     }

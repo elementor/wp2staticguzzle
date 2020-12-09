@@ -1,21 +1,21 @@
 <?php
 
-namespace GuzzleHttp\Tests;
+namespace WP2StaticGuzzleHttp\Tests;
 
-use GuzzleHttp\BodySummarizer;
-use GuzzleHttp\Cookie\CookieJar;
-use GuzzleHttp\Cookie\SetCookie;
-use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Exception\ServerException;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\MessageFormatter;
-use GuzzleHttp\Middleware;
-use GuzzleHttp\Promise as P;
-use GuzzleHttp\Promise\PromiseInterface;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
+use WP2StaticGuzzleHttp\BodySummarizer;
+use WP2StaticGuzzleHttp\Cookie\CookieJar;
+use WP2StaticGuzzleHttp\Cookie\SetCookie;
+use WP2StaticGuzzleHttp\Exception\ClientException;
+use WP2StaticGuzzleHttp\Exception\RequestException;
+use WP2StaticGuzzleHttp\Exception\ServerException;
+use WP2StaticGuzzleHttp\Handler\MockHandler;
+use WP2StaticGuzzleHttp\HandlerStack;
+use WP2StaticGuzzleHttp\MessageFormatter;
+use WP2StaticGuzzleHttp\Middleware;
+use WP2StaticGuzzleHttp\Promise as P;
+use WP2StaticGuzzleHttp\Promise\PromiseInterface;
+use WP2StaticGuzzleHttp\Psr7\Request;
+use WP2StaticGuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;

@@ -1,23 +1,23 @@
 <?php
 
-namespace GuzzleHttp\Test\Handler;
+namespace WP2StaticGuzzleHttp\Test\Handler;
 
-use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Handler\StreamHandler;
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Psr7\FnStream;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\RequestOptions;
-use GuzzleHttp\Tests\Server;
-use GuzzleHttp\TransferStats;
-use GuzzleHttp\Utils;
+use WP2StaticGuzzleHttp\Exception\ConnectException;
+use WP2StaticGuzzleHttp\Exception\RequestException;
+use WP2StaticGuzzleHttp\Handler\StreamHandler;
+use WP2StaticGuzzleHttp\Psr7;
+use WP2StaticGuzzleHttp\Psr7\FnStream;
+use WP2StaticGuzzleHttp\Psr7\Request;
+use WP2StaticGuzzleHttp\Psr7\Response;
+use WP2StaticGuzzleHttp\RequestOptions;
+use WP2StaticGuzzleHttp\Tests\Server;
+use WP2StaticGuzzleHttp\TransferStats;
+use WP2StaticGuzzleHttp\Utils;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * @covers \GuzzleHttp\Handler\StreamHandler
+ * @covers \WP2StaticGuzzleHttp\Handler\StreamHandler
  */
 class StreamHandlerTest extends TestCase
 {

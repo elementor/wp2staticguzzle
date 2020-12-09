@@ -1,15 +1,15 @@
 <?php
 
-namespace GuzzleHttp\Tests\Handler;
+namespace WP2StaticGuzzleHttp\Tests\Handler;
 
-use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Handler\CurlMultiHandler;
-use GuzzleHttp\Promise as P;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Tests\Helpers;
-use GuzzleHttp\Tests\Server;
-use GuzzleHttp\Utils;
+use WP2StaticGuzzleHttp\Exception\ConnectException;
+use WP2StaticGuzzleHttp\Handler\CurlMultiHandler;
+use WP2StaticGuzzleHttp\Promise as P;
+use WP2StaticGuzzleHttp\Psr7\Request;
+use WP2StaticGuzzleHttp\Psr7\Response;
+use WP2StaticGuzzleHttp\Tests\Helpers;
+use WP2StaticGuzzleHttp\Tests\Server;
+use WP2StaticGuzzleHttp\Utils;
 use PHPUnit\Framework\TestCase;
 
 class CurlMultiHandlerTest extends TestCase

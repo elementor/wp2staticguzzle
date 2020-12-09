@@ -1,6 +1,6 @@
 <?php
 
-namespace GuzzleHttp;
+namespace WP2StaticGuzzleHttp;
 
 /**
  * Debug function used to describe the provided value type and class.
@@ -52,7 +52,7 @@ function debug_resource($value = null)
  *
  * @throws \RuntimeException if no viable Handler is available.
  *
- * @return callable(\Psr\Http\Message\RequestInterface, array): \GuzzleHttp\Promise\PromiseInterface Returns the best handler for the given system.
+ * @return callable(\Psr\Http\Message\RequestInterface, array): \WP2StaticGuzzleHttp\Promise\PromiseInterface Returns the best handler for the given system.
  *
  * @deprecated choose_handler will be removed in guzzlehttp/guzzle:8.0. Use Utils::chooseHandler instead.
  */

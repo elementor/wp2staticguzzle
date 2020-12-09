@@ -58,7 +58,7 @@
     },
     "autoload": {
         "psr-4": {
-            "GuzzleHttp\\": "src/"
+            "WP2StaticGuzzleHttp\\": "src/"
         },
         "files": [
             "src/functions_include.php"
@@ -66,7 +66,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "GuzzleHttp\\Tests\\": "tests/"
+            "WP2StaticGuzzleHttp\\Tests\\": "tests/"
         }
     }
 }

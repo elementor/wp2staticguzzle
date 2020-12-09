@@ -1,11 +1,11 @@
 <?php
 
-namespace GuzzleHttp\Handler;
+namespace WP2StaticGuzzleHttp\Handler;
 
-use GuzzleHttp\Promise as P;
-use GuzzleHttp\Promise\Promise;
-use GuzzleHttp\Promise\PromiseInterface;
-use GuzzleHttp\Utils;
+use WP2StaticGuzzleHttp\Promise as P;
+use WP2StaticGuzzleHttp\Promise\Promise;
+use WP2StaticGuzzleHttp\Promise\PromiseInterface;
+use WP2StaticGuzzleHttp\Utils;
 use Psr\Http\Message\RequestInterface;
 
 /**

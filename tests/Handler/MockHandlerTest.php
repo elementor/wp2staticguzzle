@@ -1,18 +1,18 @@
 <?php
 
-namespace GuzzleHttp\Test\Handler;
+namespace WP2StaticGuzzleHttp\Test\Handler;
 
-use GuzzleHttp\Exception\BadResponseException;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7\Stream;
-use GuzzleHttp\TransferStats;
+use WP2StaticGuzzleHttp\Exception\BadResponseException;
+use WP2StaticGuzzleHttp\Exception\RequestException;
+use WP2StaticGuzzleHttp\Handler\MockHandler;
+use WP2StaticGuzzleHttp\Psr7\Request;
+use WP2StaticGuzzleHttp\Psr7\Response;
+use WP2StaticGuzzleHttp\Psr7\Stream;
+use WP2StaticGuzzleHttp\TransferStats;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \GuzzleHttp\Handler\MockHandler
+ * @covers \WP2StaticGuzzleHttp\Handler\MockHandler
  */
 class MockHandlerTest extends TestCase
 {

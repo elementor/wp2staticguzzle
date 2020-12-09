@@ -20,7 +20,7 @@ trivial to integrate with web services.
 
 .. code-block:: php
 
-    $client = new GuzzleHttp\Client();
+    $client = new WP2StaticGuzzleHttp\Client();
     $res = $client->request('GET', 'https://api.github.com/user', [
         'auth' => ['user', 'pass']
     ]);
@@ -32,7 +32,7 @@ trivial to integrate with web services.
     // {"type":"User"...'
 
     // Send an asynchronous request.
-    $request = new \GuzzleHttp\Psr7\Request('GET', 'http://httpbin.org');
+    $request = new \WP2StaticGuzzleHttp\Psr7\Request('GET', 'http://httpbin.org');
     $promise = $client->sendAsync($request)->then(function ($response) {
         echo 'I completed! ' . $response->getBody();
     });

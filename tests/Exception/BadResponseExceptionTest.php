@@ -1,10 +1,10 @@
 <?php
 
-namespace GuzzleHttp\Tests\Exception;
+namespace WP2StaticGuzzleHttp\Tests\Exception;
 
-use GuzzleHttp\Exception\BadResponseException;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
+use WP2StaticGuzzleHttp\Exception\BadResponseException;
+use WP2StaticGuzzleHttp\Psr7\Request;
+use WP2StaticGuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 
 class BadResponseExceptionTest extends TestCase

@@ -1,12 +1,12 @@
 <?php
 
-namespace GuzzleHttp;
+namespace WP2StaticGuzzleHttp;
 
-use GuzzleHttp\Exception\InvalidArgumentException;
-use GuzzleHttp\Handler\CurlHandler;
-use GuzzleHttp\Handler\CurlMultiHandler;
-use GuzzleHttp\Handler\Proxy;
-use GuzzleHttp\Handler\StreamHandler;
+use WP2StaticGuzzleHttp\Exception\InvalidArgumentException;
+use WP2StaticGuzzleHttp\Handler\CurlHandler;
+use WP2StaticGuzzleHttp\Handler\CurlMultiHandler;
+use WP2StaticGuzzleHttp\Handler\Proxy;
+use WP2StaticGuzzleHttp\Handler\StreamHandler;
 use Psr\Http\Message\UriInterface;
 
 final class Utils
@@ -86,7 +86,7 @@ final class Utils
      *
      * @throws \RuntimeException if no viable Handler is available.
      *
-     * @return callable(\Psr\Http\Message\RequestInterface, array): \GuzzleHttp\Promise\PromiseInterface Returns the best handler for the given system.
+     * @return callable(\Psr\Http\Message\RequestInterface, array): \WP2StaticGuzzleHttp\Promise\PromiseInterface Returns the best handler for the given system.
      */
     public static function chooseHandler(): callable
     {
@@ -104,7 +104,7 @@ final class Utils
                 ? Proxy::wrapStreaming($handler, new StreamHandler())
                 : new StreamHandler();
         } elseif (!$handler) {
-            throw new \RuntimeException('GuzzleHttp requires cURL, the allow_url_fopen ini setting, or a custom HTTP handler.');
+            throw new \RuntimeException('WP2StaticGuzzleHttp requires cURL, the allow_url_fopen ini setting, or a custom HTTP handler.');
         }
 
         return $handler;
@@ -115,7 +115,7 @@ final class Utils
      */
     public static function defaultUserAgent(): string
     {
-        return sprintf('GuzzleHttp/%d', ClientInterface::MAJOR_VERSION);
+        return sprintf('WP2StaticGuzzleHttp/%d', ClientInterface::MAJOR_VERSION);
     }
 
     /**

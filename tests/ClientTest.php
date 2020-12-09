@@ -1,18 +1,18 @@
 <?php
 
-namespace GuzzleHttp\Tests;
+namespace WP2StaticGuzzleHttp\Tests;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Cookie\CookieJar;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Middleware;
-use GuzzleHttp\Promise\PromiseInterface;
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7\Uri;
-use GuzzleHttp\RequestOptions;
+use WP2StaticGuzzleHttp\Client;
+use WP2StaticGuzzleHttp\Cookie\CookieJar;
+use WP2StaticGuzzleHttp\Handler\MockHandler;
+use WP2StaticGuzzleHttp\HandlerStack;
+use WP2StaticGuzzleHttp\Middleware;
+use WP2StaticGuzzleHttp\Promise\PromiseInterface;
+use WP2StaticGuzzleHttp\Psr7;
+use WP2StaticGuzzleHttp\Psr7\Request;
+use WP2StaticGuzzleHttp\Psr7\Response;
+use WP2StaticGuzzleHttp\Psr7\Uri;
+use WP2StaticGuzzleHttp\RequestOptions;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 
@@ -210,7 +210,7 @@ class ClientTest extends TestCase
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
 
-        $this->expectException(\GuzzleHttp\Exception\ClientException::class);
+        $this->expectException(\WP2StaticGuzzleHttp\Exception\ClientException::class);
         $client->get('http://foo.com');
     }
 
@@ -221,7 +221,7 @@ class ClientTest extends TestCase
         $client = new Client(['handler' => $handler]);
 
         $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage('cookies must be an instance of GuzzleHttp\\Cookie\\CookieJarInterface');
+        $this->expectExceptionMessage('cookies must be an instance of WP2StaticGuzzleHttp\\Cookie\\CookieJarInterface');
         $client->get('http://foo.com', ['cookies' => 'foo']);
     }
 
@@ -764,7 +764,7 @@ class ClientTest extends TestCase
         $mockHandler = new MockHandler([new Response()]);
         $client = new Client(['handler' => $mockHandler]);
 
-        $this->expectException(\GuzzleHttp\Exception\InvalidArgumentException::class);
+        $this->expectException(\WP2StaticGuzzleHttp\Exception\InvalidArgumentException::class);
         $this->expectExceptionMessage('IDN conversion failed');
         $client->request('GET', 'https://-яндекс.рф/images', ['idn_conversion' => true]);
     }

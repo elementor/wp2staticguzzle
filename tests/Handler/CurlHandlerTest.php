@@ -1,19 +1,19 @@
 <?php
 
-namespace GuzzleHttp\Test\Handler;
+namespace WP2StaticGuzzleHttp\Test\Handler;
 
-use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Handler\CurlHandler;
-use GuzzleHttp\Promise\FulfilledPromise;
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Tests\Server;
-use GuzzleHttp\Utils;
+use WP2StaticGuzzleHttp\Exception\ConnectException;
+use WP2StaticGuzzleHttp\Handler\CurlHandler;
+use WP2StaticGuzzleHttp\Promise\FulfilledPromise;
+use WP2StaticGuzzleHttp\Psr7;
+use WP2StaticGuzzleHttp\Psr7\Request;
+use WP2StaticGuzzleHttp\Psr7\Response;
+use WP2StaticGuzzleHttp\Tests\Server;
+use WP2StaticGuzzleHttp\Utils;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \GuzzleHttp\Handler\CurlHandler
+ * @covers \WP2StaticGuzzleHttp\Handler\CurlHandler
  */
 class CurlHandlerTest extends TestCase
 {

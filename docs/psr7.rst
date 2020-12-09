@@ -11,11 +11,11 @@ responses. Both requests and responses are referred to as messages.
 Guzzle relies on the ``guzzlehttp/psr7`` Composer package for its message
 implementation of PSR-7.
 
-You can create a request using the ``GuzzleHttp\Psr7\Request`` class:
+You can create a request using the ``WP2StaticGuzzleHttp\Psr7\Request`` class:
 
 .. code-block:: php
 
-    use GuzzleHttp\Psr7\Request;
+    use WP2StaticGuzzleHttp\Psr7\Request;
 
     $request = new Request('GET', 'http://httpbin.org/get');
 
@@ -24,11 +24,11 @@ You can create a request using the ``GuzzleHttp\Psr7\Request`` class:
     $body = 'hello!';
     $request = new Request('PUT', 'http://httpbin.org/put', $headers, $body);
 
-You can create a response using the ``GuzzleHttp\Psr7\Response`` class:
+You can create a response using the ``WP2StaticGuzzleHttp\Psr7\Response`` class:
 
 .. code-block:: php
 
-    use GuzzleHttp\Psr7\Response;
+    use WP2StaticGuzzleHttp\Psr7\Response;
 
     // The constructor requires no arguments.
     $response = new Response();
@@ -57,7 +57,7 @@ You can check if a request or response has a specific header using the
 
 .. code-block:: php
 
-    use GuzzleHttp\Psr7;
+    use WP2StaticGuzzleHttp\Psr7;
 
     $request = new Psr7\Request('GET', '/', ['X-Foo' => 'bar']);
 
@@ -100,7 +100,7 @@ headers:
 
 .. code-block:: php
 
-    use GuzzleHttp\Psr7;
+    use WP2StaticGuzzleHttp\Psr7;
 
     $request = new Psr7\Request('GET', '/', [
         'Link' => '<http:/.../front.jpeg>; rel="front"; type="image/jpeg"'
@@ -136,7 +136,7 @@ You can retrieve the body of a message using the ``getBody()`` method:
 
 .. code-block:: php
 
-    $response = GuzzleHttp\get('http://httpbin.org/get');
+    $response = WP2StaticGuzzleHttp\get('http://httpbin.org/get');
     echo $response->getBody();
     // JSON string: { ... }
 
@@ -148,7 +148,7 @@ exceeds 2 MB, the stream will automatically switch to storing data on disk
 rather than in memory (protecting your application from memory exhaustion).
 
 The easiest way to create a body for a message is using the ``streamFor``
-method from the ``GuzzleHttp\Psr7\Utils`` class --
+method from the ``WP2StaticGuzzleHttp\Psr7\Utils`` class --
 ``Utils::streamFor``. This method accepts strings, resources,
 callables, iterators, other streamables, and returns an instance of
 ``Psr\Http\Message\StreamInterface``.
@@ -158,7 +158,7 @@ write bytes off of the stream as needed.
 
 .. code-block:: php
 
-    use GuzzleHttp\Stream\Stream;
+    use WP2StaticGuzzleHttp\Stream\Stream;
     $response = $client->request('GET', 'http://httpbin.org/get');
 
     echo $response->getBody()->read(4);
@@ -185,7 +185,7 @@ that might not be part of RFC 7231 (like "MOVE").
 .. code-block:: php
 
     // Create a request using a completely custom HTTP method
-    $request = new \GuzzleHttp\Psr7\Request('MOVE', 'http://httpbin.org/move');
+    $request = new \WP2StaticGuzzleHttp\Psr7\Request('MOVE', 'http://httpbin.org/move');
 
     echo $request->getMethod();
     // MOVE
@@ -213,7 +213,7 @@ Request URI
 
 The request URI is represented by a ``Psr\Http\Message\UriInterface`` object.
 Guzzle provides an implementation of this interface using the
-``GuzzleHttp\Psr7\Uri`` class.
+``WP2StaticGuzzleHttp\Psr7\Uri`` class.
 
 When creating a request, you can provide the URI as a string or an instance of
 ``Psr\Http\Message\UriInterface``.
@@ -310,7 +310,7 @@ status code, and reason phrase.
 
 .. code-block:: php
 
-    $client = new \GuzzleHttp\Client();
+    $client = new \WP2StaticGuzzleHttp\Client();
     $response = $client->request('GET', 'http://httpbin.org/get');
 
     echo $response->getStatusCode(); // 200
@@ -372,14 +372,14 @@ stream resource, and stream decorators can be found in the
 Creating Streams
 ----------------
 
-The best way to create a stream is using the ``GuzzleHttp\Psr7\Utils::streamFor``
+The best way to create a stream is using the ``WP2StaticGuzzleHttp\Psr7\Utils::streamFor``
 method. This method accepts strings, resources returned from ``fopen()``,
 an object that implements ``__toString()``, iterators, callables, and instances
 of ``Psr\Http\Message\StreamInterface``.
 
 .. code-block:: php
 
-    use GuzzleHttp\Psr7;
+    use WP2StaticGuzzleHttp\Psr7;
 
     $stream = Psr7\Utils::streamFor('string data');
     echo $stream;
@@ -399,7 +399,7 @@ requested by a stream consumer will be buffered until a subsequent read.
 
 .. code-block:: php
 
-    use GuzzleHttp\Psr7;
+    use WP2StaticGuzzleHttp\Psr7;
 
     $generator = function ($bytes) {
         for ($i = 0; $i < $bytes; $i++) {
@@ -422,7 +422,7 @@ and can optionally expose other custom data.
 
 .. code-block:: php
 
-    use GuzzleHttp\Psr7;
+    use WP2StaticGuzzleHttp\Psr7;
 
     $resource = fopen('/path/to/file', 'r');
     $stream = Psr7\Utils::streamFor($resource);

@@ -1,15 +1,15 @@
 <?php
 
-namespace GuzzleHttp\Tests\Exception;
+namespace WP2StaticGuzzleHttp\Tests\Exception;
 
-use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Psr7\Request;
+use WP2StaticGuzzleHttp\Exception\ConnectException;
+use WP2StaticGuzzleHttp\Psr7\Request;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\NetworkExceptionInterface;
 use Psr\Http\Client\RequestExceptionInterface;
 
 /**
- * @covers \GuzzleHttp\Exception\ConnectException
+ * @covers \WP2StaticGuzzleHttp\Exception\ConnectException
  */
 class ConnectExceptionTest extends TestCase
 {

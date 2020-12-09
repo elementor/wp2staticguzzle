@@ -1,12 +1,12 @@
 <?php
 
-namespace GuzzleHttp\Test\Handler;
+namespace WP2StaticGuzzleHttp\Test\Handler;
 
-use GuzzleHttp\Handler\EasyHandle;
+use WP2StaticGuzzleHttp\Handler\EasyHandle;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \GuzzleHttp\Handler\EasyHandle
+ * @covers \WP2StaticGuzzleHttp\Handler\EasyHandle
  */
 class EasyHandleTest extends TestCase
 {
