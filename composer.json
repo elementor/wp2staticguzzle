@@ -1,7 +1,7 @@
 {
     "name": "leonstafford/wp2staticguzzle",
     "type": "library",
-    "description": "Guzzle is a PHP HTTP client library",
+    "description": "Safely namespaced Guzzle for WP2Static",
     "keywords": [
         "framework",
         "http",
