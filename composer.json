@@ -1,5 +1,5 @@
 {
-    "name": "guzzlehttp/guzzle",
+    "name": "leonstafford/wp2staticguzzle",
     "type": "library",
     "description": "Guzzle is a PHP HTTP client library",
     "keywords": [
