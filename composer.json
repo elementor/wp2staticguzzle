@@ -30,8 +30,8 @@
     "require": {
         "php": "^7.2.5 || ^8.0",
         "ext-json": "*",
-        "guzzlehttp/promises": "^1.4",
-        "guzzlehttp/psr7": "^1.7",
+        "leonstafford/wp2staticpromises": "^1.4",
+        "leonstafford/wp2staticpsr7": "^1.7",
         "psr/http-client": "^1.0"
     },
     "provide": {
